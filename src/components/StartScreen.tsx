@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "./Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 const levels = ["easy", "medium", "hard"] as const;
 type DifficultyLevel = (typeof levels)[number];
@@ -80,6 +81,7 @@ const StartScreen: React.FC<StartScreenProps> = ({
       </ul>
     </div>
     <Footer />
+    <Analytics />
   </div>
 );
 
