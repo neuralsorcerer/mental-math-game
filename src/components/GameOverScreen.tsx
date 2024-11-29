@@ -1,5 +1,4 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react';
 
 interface GameOverScreenProps {
   score: number;
@@ -12,24 +11,17 @@ const GameOverScreen: React.FC<GameOverScreenProps> = ({
   highScore,
   restartGame,
 }) => (
-  <motion.div
-    className="flex flex-col items-center justify-center min-h-screen text-center space-y-6"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-  >
+  <div className="flex flex-col items-center justify-center min-h-screen text-center space-y-6">
     <h1 className="text-4xl md:text-5xl font-bold text-red-600">Game Over</h1>
     <p className="text-xl md:text-2xl">Your Score: {score}</p>
     <p className="text-xl md:text-2xl">High Score: {highScore}</p>
-    <motion.button
-      className="px-6 py-3 text-sm md:text-base bg-green-700 text-white rounded-full transition"
+    <button
+      className="px-6 py-3 text-sm md:text-base bg-green-700 text-white rounded-full hover:bg-green-800 transition"
       onClick={restartGame}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
     >
       Play Again
-    </motion.button>
-  </motion.div>
+    </button>
+  </div>
 );
 
 export default GameOverScreen;
