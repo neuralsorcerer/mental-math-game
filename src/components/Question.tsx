@@ -16,13 +16,17 @@ const Question: React.FC<QuestionProps> = ({
   score,
 }) => {
   let textColor = "text-green-700";
+  let bgColor = "bg-green-700";
 
   if (score > 1000) {
     textColor = "text-pink-600";
+    bgColor = "bg-pink-600";
   } else if (score > 500) {
     textColor = "text-purple-600";
+    bgColor = "bg-purple-600";
   } else if (score > 250) {
     textColor = "text-teal-600";
+    bgColor = "bg-teal-600";
   }
 
   return (
@@ -42,7 +46,7 @@ const Question: React.FC<QuestionProps> = ({
         }}
       />
       <button
-        className={`px-6 py-3 text-base ${textColor} text-white rounded-full hover:bg-green-800 transition`}
+        className={`px-6 py-3 text-base ${bgColor} text-white rounded-full hover:bg-green-800 transition`}
         onClick={handleSubmitAnswer}
       >
         Submit
