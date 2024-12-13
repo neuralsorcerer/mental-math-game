@@ -12,8 +12,19 @@ const Header: React.FC<HeaderProps> = ({
   score,
   exitGame,
   startGame,
-}) => (
-  <div className="flex flex-col md:flex-row items-center justify-between p-4 bg-green-700 text-white">
+}) => {
+  let bgColor = "#2F855A";
+  
+  if (score > 1000) {
+    bgColor = "#B83280";
+  } else if (score > 500) {
+    bgColor = "#6B46C1";
+  } else if (score > 250) {
+    bgColor = "#2C7A7B";
+  }
+  
+  return (
+  <div className="flex flex-col md:flex-row items-center justify-between p-4 transition-colors duration-500 ease-in-out text-white" style={{ backgroundColor: bgColor }}>
     <div className="mb-2 md:mb-0">
       <p className="text-lg font-bold">Time Left: {timer}s</p>
     </div>
@@ -35,6 +46,7 @@ const Header: React.FC<HeaderProps> = ({
       </button>
     </div>
   </div>
-);
+)
+};
 
 export default Header;
