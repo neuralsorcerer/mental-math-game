@@ -103,7 +103,7 @@ const App: React.FC = () => {
   }, [timer]);
 
   useEffect(() => {
-    if (gameState === "playing" && score >= 2000 && !isDarkMode) {
+    if (gameState === "playing" && score >= 1500 && !isDarkMode) {
       setIsDarkMode(true);
     }
   }, [score, isDarkMode, gameState]);
