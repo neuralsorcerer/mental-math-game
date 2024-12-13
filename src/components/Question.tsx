@@ -42,7 +42,7 @@ const Question: React.FC<QuestionProps> = ({
         }}
       />
       <button
-        className="px-6 py-3 text-base bg-green-700 text-white rounded-full hover:bg-green-800 transition"
+        className={`px-6 py-3 text-base ${textColor} text-white rounded-full hover:bg-green-800 transition`}
         onClick={handleSubmitAnswer}
       >
         Submit
